@@ -43,3 +43,9 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# Fleet
+.fleet
+
+# Idea
+.idea
