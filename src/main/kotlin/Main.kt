@@ -1,7 +1,21 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import java.io.File
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+    println("This class is being ran")
+    var total = 0
+    val elfCalories = ArrayList<Int>()
+    File("src/main/resources/Day1.txt").forEachLine{
+        if(it.equals("")){
+            elfCalories.add(total)
+            total = 0
+        } else {
+            total += Integer.parseInt(it)
+        }
+    }
+    var threeMost = 0;
+    elfCalories.sortDescending()
+    elfCalories.take(3).forEach(){
+        threeMost+=it
+    }
+    println(threeMost)
 }
