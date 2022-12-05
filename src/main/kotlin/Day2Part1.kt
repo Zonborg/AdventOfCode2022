@@ -9,30 +9,30 @@ fun main(args: Array<String>) {
         val scissors = Triple("C", "Z", "Scissors")
         val lineResult = it.split(" ")
         val opponent = lineResult.get(0)
-        val outcome = lineResult.get(1)
+        val player = lineResult.get(1)
         if (opponent.equals(rock.first)){
-            if(outcome.equals("X")){
-                score += 3
-            } else if (outcome.equals("Y")){
+            if (player.equals(rock.second)){
                 score += 4
-            } else if (outcome.equals("Z")){
+            } else if (player.equals(paper.second)){
                 score += 8
+            } else if (player.equals(scissors.second)) {
+                score += 3
             }
         } else if (opponent.equals(paper.first)) {
-            if(outcome.equals("X")){
+            if(player.equals(rock.second)){
                 score += 1
-            } else if (outcome.equals("Y")){
+            } else if (player.equals(paper.second)){
                 score += 5
-            } else if (outcome.equals("Z")){
+            } else if (player.equals(scissors.second)) {
                 score += 9
             }
         } else if (opponent.equals(scissors.first)) {
-            if(outcome.equals("X")){
-                score += 2
-            } else if (outcome.equals("Y")){
-                score += 6
-            } else if (outcome.equals("Z")){
+            if(player.equals(rock.second)){
                 score += 7
+            } else if (player.equals(paper.second)){
+                score += 2
+            } else if (player.equals(scissors.second)) {
+                score += 6
             }
         }
     }
